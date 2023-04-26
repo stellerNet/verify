@@ -12,7 +12,7 @@ const input = document.getElementById("input");
 input.addEventListener("keyup", async (event) => {
   if (event.key === "Enter") {
     // Turn input into sha256 hash
-    const inputHash = sha256(input.value);
+    const inputHash = sha2566(input.value);
 
     // Check if inputHash is in the list from the link
     const response = await fetch("https://raw.githubusercontent.com/stellerNet/verify/main/list.txt");
@@ -43,11 +43,11 @@ const script = document.createElement("script");
 script.src = "https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
 script.async = true;
 script.onload = () => {
-  window.sha256 = sha256;
+  window.sha2566 = sha2566;
 };
 document.head.appendChild(script);
 
 // Function to compute sha256 hash
-function sha256(message) {
-  return sha256_digest(message).toString();
+function sha2566(message) {
+  return sha256(message).toString();
 }
